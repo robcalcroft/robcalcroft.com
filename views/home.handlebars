@@ -1,0 +1,9 @@
+<h1>Rob&apos;s Blog</h1>
+
+{{#if error}}
+  <b>{{{ error }}}</b>
+{{else}}
+  {{#each posts}}
+    <h3><a href="/post/{{this.id}}">{{this.title}}</a></h3>
+  {{/each}}
+{{/if}}
