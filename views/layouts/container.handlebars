@@ -4,11 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {{#if contentSnippet}}
+    <meta name="description" content="{{contentSnippet}}"/>
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{contentSnippet}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{contentSnippet}}">
+  {{else}}
+    <meta name="description" content="A tech blog coverring web development"/>
+    <meta property="og:title" content="Rob's Blog">
+    <meta property="og:description" content="A tech blog coverring web development">
+    <meta name="twitter:title" content="Rob's Blog">
+    <meta name="twitter:description" content="A tech blog coverring web development">
+  {{/if}}
   <link rel="stylesheet" href="/style.css">
-  <title>Rob&apos;s Blog</title>
+  <title>{{#if title}}{{title}}{{else}}Rob&apos;s Blog{{/if}}</title>
 </head>
 <body>
   <div class="content">{{{ body }}}</div>
-  <footer>Rob Calcroft / <a href="https://calcroft.com">calcroft.com</a></footer>
+  <footer>Rob Calcroft &#8226; <a href="https://calcroft.com">calcroft.com</a></footer>
 </body>
 </html>

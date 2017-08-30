@@ -16,6 +16,8 @@ const createPost = (rawPost) => {
     id: rawPost.id,
     title: rawPost.title,
     content: htmlToMarkdown.makeHtml(rawPost.content),
+    // For showing a small intro snippet of the article
+    contentSnippet: htmlToMarkdown.makeHtml(rawPost.content).replace(/(<([^>]+)>)/ig, '').slice(0, 160),
     created: moment.unix(rawPost.created).format('DD MMM YYYY'),
   };
 };
