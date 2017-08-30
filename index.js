@@ -19,12 +19,16 @@ const createPost = (rawPost) => {
     created: moment.unix(rawPost.created).format('DD MMM YYYY'),
   };
 };
+const logRequest = (req, res, next) => {
+  log(0, req.path);
+  next();
+};
 
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'container' }));
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
-app.get('/', (req, res) => db.all(
+app.get('/', logRequest, (req, res) => db.all(
   'select rowid as id, * from posts order by created desc',
   (error, posts) => {
     if (error) {
@@ -40,7 +44,7 @@ app.get('/', (req, res) => db.all(
   },
 ));
 
-app.get('/post/:id', (req, res) => db.get(
+app.get('/post/:id', logRequest, (req, res) => db.get(
   'select rowid as id, * from posts where rowid=?',
   req.params.id,
   (error, post) => {
