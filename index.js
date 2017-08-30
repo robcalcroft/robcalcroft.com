@@ -65,6 +65,8 @@ app.get('/post/:id', logRequest, (req, res) => db.get(
   },
 ));
 
+app.get('*', logRequest, (req, res) => res.redirect(301, '/'));
+
 // Start the server listening on the specified port
 app.listen(process.env.PORT || 8080, () => (
   log(0, `Blag server running on port ${process.env.PORT || 8080}`)
