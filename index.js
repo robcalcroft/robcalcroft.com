@@ -3,6 +3,7 @@ const expressHandlebars = require('express-handlebars');
 const sqlite = require('sqlite3');
 const showdown = require('showdown');
 const log = require('./log');
+const moment = require('moment');
 
 const app = express();
 const db = new sqlite.Database('blog.database');
@@ -15,7 +16,7 @@ const createPost = (rawPost) => {
     id: rawPost.id,
     title: rawPost.title,
     content: htmlToMarkdown.makeHtml(rawPost.content),
-    created: new Date(rawPost.created * 1000).toLocaleString(),
+    created: moment.unix(rawPost.created).format('DD MMM YYYY'),
   };
 };
 
@@ -24,7 +25,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => db.all(
-  'select rowid as id, * from posts',
+  'select rowid as id, * from posts order by created desc',
   (error, posts) => {
     if (error) {
       log(1, error.message);

@@ -15,5 +15,5 @@ db.all(`
     return log(1, `There was an error: ${error.message}`);
   }
 
-  return log(0, 'Database created');
+  return log(2, 'Database created');
 });

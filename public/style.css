@@ -1,18 +1,78 @@
 body {
-  font-family: helvetica;
-  font-size: 125%;
+  font-family: -apple-system, BlinkMacSystemFont,
+  "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;;
+  font-size: 1.4rem;
   height: 100vh;
-  margin: 0 5%;
+  margin: 0 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  line-height: 2.325rem;
+  color: #404040;
 }
 
-a { color: rgb(245,171,53) }
-a:hover { color: rgb(275,201,83) }
+a {
+  color: #3498db;
+  text-decoration: none;
+}
 
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 100%;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  color: rgb(245,171,53);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
 
 footer {
-  color: slategray;
+  color: #a6a6a6;
   margin-bottom: 0.5rem;
+}
+
+blockquote {
+  border-left: 0.75rem solid #a6a6a6;
+  margin: 0;
+  padding-left: 2rem;
+}
+
+ul.posts {
+  padding-left: 20px;
+}
+
+ul.posts li {
+  margin: 1rem 0;
+}
+
+article.post {
+  padding-top: 4rem;
+}
+
+article.post > section {
+  color: rgb(70,70,70);
+}
+
+.date {
+  color: #a6a6a6;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0 5%;
+  }
+
+  article.post {
+    padding-top: 0;
+  }
 }

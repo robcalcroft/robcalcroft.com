@@ -1,7 +1,9 @@
 {{#if error}}
   <b>{{{ error }}}</b>
 {{else}}
-  <h2>{{ title }}</h2>
-  <h5>{{ created }}</h5>
-  {{{ content }}}
+  <article class="post">
+    <h1>{{ title }}</h1>
+    <div class="date">{{ created }} / <a href="/">Go Home</a></div>
+    <section>{{{ content }}}</section>
+  </article>
 {{/if}}
