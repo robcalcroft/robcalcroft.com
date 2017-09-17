@@ -3,7 +3,7 @@
 {{else}}
   <article class="post">
     <h1>{{ title }}</h1>
-    <div class="date">{{ created }} &#8226; <a href="/">Go Home</a></div>
+    <div class="date">{{ created }} &#8226; {{ getReadingSpeed content }} &#8226; <a href="/">Go Home</a></div>
     <section>{{{ content }}}</section>
   </article>
 {{/if}}

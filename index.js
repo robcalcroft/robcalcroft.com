@@ -63,7 +63,19 @@ app.get('/post/:id', logRequest, (req, res) => db.get(
       });
     }
 
-    return res.render('post', createPost(post));
+    return res.render('post', {
+      ...createPost(post),
+      helpers: {
+        getReadingSpeed(content) {
+          // Regexs taken from: http://locutus.io/php/strings/strip_tags/
+          const tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi;
+          const commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+          const strippedContent = content.replace(tags, '').replace(commentsAndPhpTags, '');
+          // We use 250 words per minute as the average persons reading speed
+          return `${Math.ceil(strippedContent.split(' ').length / 250)} minute read`;
+        },
+      },
+    });
   },
 ));
 
