@@ -22,6 +22,10 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus, a:active {
+  outline: 3px solid rgb(245,171,53);
+}
+
 h1 {
   font-size: 3rem;
   line-height: 100%;
