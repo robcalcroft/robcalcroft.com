@@ -1,5 +1,5 @@
-# blag
-A simple blogging platform
+# blog.calcroft.com
+My blogging platform
 
 To add a blog post:
 1. Install SQLite on command line
