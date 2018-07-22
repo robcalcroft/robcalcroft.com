@@ -27,7 +27,7 @@ handlebars.registerHelper('getDateString', getDateString);
   handlebars.registerPartial('container', await fs.readFile('src/container.handlebars', 'utf8'));
 
   await fs.copy(`${SRC}/style.css`, `${DIST}/style.css`);
-  await fs.copy(`${SRC}/_headers.css`, `${DIST}/_headers.css`);
+  await fs.copy(`${SRC}/_headers`, `${DIST}/_headers`);
 
   const postTemplate = handlebars.compile(await fs.readFile('src/post.handlebars', 'utf8'));
   posts.sort((a, b) => a.created - b.created).reverse().forEach(async ({
