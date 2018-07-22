@@ -1,0 +1,6 @@
+/*
+  x-content-type-options: nosniff
+  x-frame-options: SAMEORIGIN
+  x-xss-protection: 1; mode=block
+  content-security-policy: default-src 'self'
+  referrer-policy: no-referrer-when-downgrade

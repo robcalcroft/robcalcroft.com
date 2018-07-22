@@ -1,25 +1,21 @@
 {
-  "name": "blag",
+  "name": "blog.calcroft.com",
   "version": "1.0.0",
-  "description": "A simple blogging platform",
-  "main": "index.js",
+  "repository": "git@github.com:robcalcroft/blog.calcroft.com.git",
+  "author": "Rob Calcroft <rob@calcroft.com>",
   "scripts": {
-    "start": "node index.js",
-    "create-database": "node database-create.js"
+    "lint": "eslint .",
+    "build": "node build.js"
   },
-  "repository": "https://github.com/robcalcroft/blag",
-  "author": "rob@calcroft.com",
-  "license": "AGPL-3.0",
+  "license": "UNLICENSED",
   "dependencies": {
-    "express": "^4.15.4",
-    "express-handlebars": "^3.0.0",
-    "moment": "^2.18.1",
-    "showdown": "^1.7.3",
-    "sqlite3": "^3.1.9"
+    "fs-extra": "^7.0.0",
+    "handlebars": "^4.0.11",
+    "showdown": "^1.8.6"
   },
   "devDependencies": {
-    "eslint": "^4.5.0",
-    "eslint-config-airbnb-base": "^11.3.2",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
   }
 }

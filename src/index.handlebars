@@ -1,0 +1,8 @@
+{{#> container }}
+  <h1>Rob&apos;s Blog</h1>
+  <ul class="posts">
+    {{#each posts}}
+      <li><a href="/{{getFileName this.title}}.html">{{this.title}}</a></li>
+    {{/each}}
+  </ul>
+{{/container}}
