@@ -1,0 +1,13 @@
+{{#> container }}
+  <article class="post">
+    <h1>{{title}}</h1>
+    <div class="subtitle">
+      {{getDateString created}}
+      &#8226;
+      {{readingTime}}
+      &#8226;
+      <a href="/">Go home</a>
+    </div>
+    {{{post}}}
+  </article>
+{{/container}}
