@@ -50,5 +50,6 @@ handlebars.registerHelper('getDateString', getDateString);
   const indexTemplate = handlebars.compile(await fs.readFile('src/index.handlebars', 'utf8'));
   await fs.writeFile(`${DIST}/index.html`, indexTemplate({
     posts,
+    title: 'Rob\'s Blog',
   }));
 })();
