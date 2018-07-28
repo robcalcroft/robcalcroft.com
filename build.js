@@ -30,7 +30,7 @@ handlebars.registerHelper('getDateString', getDateString);
   await fs.copy(`${SRC}/_headers`, `${DIST}/_headers`);
 
   const postTemplate = handlebars.compile(await fs.readFile('src/post.handlebars', 'utf8'));
-  posts.sort((a, b) => a.created - b.created).reverse().forEach(async ({
+  posts.sort((a, b) => b.created - a.created).forEach(async ({
     title,
     body,
     created,
@@ -50,5 +50,6 @@ handlebars.registerHelper('getDateString', getDateString);
   const indexTemplate = handlebars.compile(await fs.readFile('src/index.handlebars', 'utf8'));
   await fs.writeFile(`${DIST}/index.html`, indexTemplate({
     posts,
+    title: 'Rob\'s Blog',
   }));
 })();
