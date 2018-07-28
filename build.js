@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const handlebars = require('handlebars');
-const posts = require('./posts');
+const posts = require('./src/posts');
 
 const DIST = path.resolve(__dirname, 'dist');
 const SRC = path.resolve(__dirname, 'src');
@@ -17,7 +17,7 @@ const getDateString = date => new Date(date * 1000).toLocaleDateString();
 
 const getFileName = title => title.toLowerCase()
   .replace(/ /g, '-')
-  .replace(/(\*|,|')/g, '');
+  .replace(/(\*|,|'|:)/g, '');
 
 handlebars.registerHelper('getFileName', getFileName);
 handlebars.registerHelper('getDateString', getDateString);

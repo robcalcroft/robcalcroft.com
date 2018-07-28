@@ -1,4 +1,4 @@
-Not too long ago I wrote [a post on how I re-made my website using React](https://blog.calcroft.co/using-reactjs-to-rebuild-my-website/). It was fun and taught me a lot about React. It even taught me more about web performance. But alas it wasn't enough.
+Not too long ago I wrote [a post on how I re-made my website using React](https://blog.calcroft.com/using-react-to-rebuild-my-website.html). It was fun and taught me a lot about React. It even taught me more about web performance. But alas it wasn't enough.
 
 After assessing the site again a few months later, it didn't take long to notice a few things that weren't great:
 
