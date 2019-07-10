@@ -4,6 +4,10 @@ const showdown = require('showdown');
 const converter = new showdown.Converter();
 
 module.exports = [{
+  body: converter.makeHtml(fs.readFileSync('src/posts/scrum-to-kanban.md', 'utf8')),
+  created: 1562774571,
+  title: 'Scrum to Kanban (Lean)',
+}, {
   body: converter.makeHtml(fs.readFileSync('src/posts/my-wallpaper.md', 'utf8')),
   created: 1440284400,
   title: 'My Wallpaper',
