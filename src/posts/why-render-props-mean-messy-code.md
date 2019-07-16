@@ -4,8 +4,6 @@ Amongst the host of Apollo's client libraries is [React Apollo](https://www.gith
 
 Unfortunately the React API has always annoyed me somewhat, thats right, [render props](https://reactjs.org/docs/render-props.html). I know you can use the higher order component (HOC) `withApollo`, but its not really advertised as the best practice and you don't get things like re-renders on cache change.
 
-> I'm going to be using React Apollo examples here as I think they demonstrate a wide variety cases where render props cause messy code
-
 As the title suggests render props usually mean messy code. One top level render prop component usually looks ok and provides a cool declarative way of re-using functionality like
 <script src="https://gist.github.com/robcalcroft/9c4fbe7538e0fd27bd77e45a209a0b6f.js?file=clean-render-props.jsx"></script>
 Ok so that doesn't look to bad, but what happens when we need another render prop component?
