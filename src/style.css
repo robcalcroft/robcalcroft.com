@@ -1,8 +1,7 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont,
-  "Segoe UI", "Roboto", "Oxygen",
-  "Ubuntu", "Cantarell", "Fira Sans",
-  "Droid Sans", "Helvetica Neue", sans-serif;;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   font-size: 1.4rem;
   height: 100vh;
   margin: 0 20%;
@@ -22,8 +21,9 @@ a:hover {
   text-decoration: underline;
 }
 
-a:focus, a:active {
-  outline: 3px solid rgb(245,171,53);
+a:focus,
+a:active {
+  outline: 3px solid rgb(245, 171, 53);
 }
 
 h1 {
@@ -31,7 +31,7 @@ h1 {
   line-height: 100%;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: rgb(245,171,53);
+  color: rgb(245, 171, 53);
 }
 
 img {
@@ -41,7 +41,7 @@ img {
 
 footer {
   color: #a6a6a6;
-  margin-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 blockquote {
@@ -63,7 +63,7 @@ article.post {
 }
 
 article.post > section {
-  color: rgb(70,70,70);
+  color: rgb(70, 70, 70);
 }
 
 .subtitle {

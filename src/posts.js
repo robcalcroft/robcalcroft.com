@@ -4,6 +4,10 @@ const showdown = require('showdown');
 const converter = new showdown.Converter();
 
 module.exports = [{
+  body: converter.makeHtml(fs.readFileSync('src/posts/why-render-props-mean-messy-code.md', 'utf8')),
+  created: 1563235203,
+  title: 'Why render props mean messy code',
+}, {
   body: converter.makeHtml(fs.readFileSync('src/posts/scrum-to-kanban.md', 'utf8')),
   created: 1562774571,
   title: 'Scrum to Kanban (Lean)',
