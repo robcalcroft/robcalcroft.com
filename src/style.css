@@ -71,6 +71,12 @@ article.post > section {
   font-size: 1.5rem;
 }
 
+code {
+  font-size: 1.65rem;
+  background-color: lavender;
+  padding: 0 0.5rem;
+}
+
 @media (max-width: 768px) {
   body {
     margin: 0 5%;
