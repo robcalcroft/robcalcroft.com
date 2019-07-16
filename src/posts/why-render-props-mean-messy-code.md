@@ -1,4 +1,4 @@
-I've recently started working with GraphQL a lot and I'm really liking it! What I'm liking more is the GraphQL must-have, [Apollo](https://www.apollographql.com); its fantastic server and client libraries have made building GraphQL apps an absolute dream 🌝.
+I've recently started working with GraphQL a lot and I'm really liking it! What I'm liking more is the GraphQL must-have, [Apollo](https://www.apollographql.com); its fantastic server and client libraries have made building GraphQL apps an absolute dream. 🌝
 
 Amongst the host of Apollo's client libraries is [React Apollo](https://www.github.com/apollographql/react-apollo) which, like the rest of the Apollo tool set, has taken the JavaScript-GraphQL world by storm with its simple API and amazing caching features.
 
