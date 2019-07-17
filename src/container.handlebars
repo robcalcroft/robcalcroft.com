@@ -8,7 +8,9 @@
   <title>{{title}}</title>
 </head>
 <body>
-  <div>{{> @partial-block}}</div>
-  <footer>Rob Calcroft • <a href="https://calcroft.com">calcroft.com</a></footer>
+  {{> @partial-block}}
+  <footer>
+    Rob Calcroft {{#if post}} • <a href="/">Read more posts</a> {{/if}}• <a href="https://calcroft.com">calcroft.com</a>
+  </footer>
 </body>
 </html>

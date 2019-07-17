@@ -8,30 +8,40 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  line-height: 2.325rem;
-  color: #404040;
+  line-height: 2.2rem;
+  color: black;
 }
 
 a {
-  color: #3498db;
-  text-decoration: none;
+  color: #00008b;
+  display: inline-block;
+  padding: 0 0.1rem;
 }
 
 a:hover {
-  text-decoration: underline;
+  box-shadow: 4px 4px 0px #00008b;
+  background-color: lavender;
+  text-decoration: none;
 }
 
 a:focus,
 a:active {
-  outline: 3px solid rgb(245, 171, 53);
+  transform: scale(1.05);
 }
 
 h1 {
   font-size: 3rem;
   line-height: 100%;
   margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  color: rgb(245, 171, 53);
+  margin-bottom: 0;
+  color: #00008b;
+  background-color: lightpink;
+  padding: 0.6rem;
+  box-shadow: 8px 8px 0 lavender;
+}
+
+h1.h1__tall {
+  margin-bottom: 2rem;
 }
 
 img {
@@ -40,12 +50,12 @@ img {
 }
 
 footer {
-  color: #a6a6a6;
+  color: slategrey;
   padding-bottom: 1rem;
 }
 
 blockquote {
-  border-left: 0.5rem solid #a6a6a6;
+  border-left: 0.5rem solid slategrey;
   margin: 0;
   padding-left: 2rem;
 }
@@ -58,22 +68,15 @@ ul.posts li {
   margin: 0.75rem 0;
 }
 
-article.post {
-  padding-top: 4rem;
-}
-
-article.post > section {
-  color: rgb(70, 70, 70);
-}
-
 .subtitle {
-  color: #a6a6a6;
+  color: slategrey;
   font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 code {
   font-size: 1.65rem;
-  background-color: lavender;
+  background-color: lavenderblush;
   padding: 0 0.5rem;
 }
 
@@ -89,25 +92,31 @@ pre code {
 }
 
 .author__image {
-  width: 100px;
+  width: 85px;
   border-radius: 4px;
   align-self: center;
 }
 
 .author__info {
   margin-left: 1rem;
+  font-weight: bold;
+  color: #00008b;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   body {
-    margin: 0 5%;
-  }
-
-  article.post {
-    padding-top: 0;
+    margin: 0 3%;
   }
 
   .author {
     flex-direction: column;
+  }
+
+  .author__image {
+    align-self: flex-start;
+  }
+
+  .author__info {
+    margin-left: 0;
   }
 }
