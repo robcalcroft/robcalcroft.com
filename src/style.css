@@ -81,6 +81,23 @@ pre code {
   font-size: 1.4rem;
 }
 
+.author {
+  display: flex;
+  padding: 1.5rem;
+  background-color: lavender;
+  margin-bottom: 1rem;
+}
+
+.author__image {
+  width: 100px;
+  border-radius: 4px;
+  align-self: center;
+}
+
+.author__info {
+  margin-left: 1rem;
+}
+
 @media (max-width: 768px) {
   body {
     margin: 0 5%;
@@ -88,5 +105,9 @@ pre code {
 
   article.post {
     padding-top: 0;
+  }
+
+  .author {
+    flex-direction: column;
   }
 }
