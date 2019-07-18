@@ -62,6 +62,7 @@ blockquote {
 
 ul.posts {
   padding-left: 20px;
+  flex-grow: 1;
 }
 
 ul.posts li {
