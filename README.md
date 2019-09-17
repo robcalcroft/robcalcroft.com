@@ -1,5 +1,5 @@
-# blog.calcroft.com
-My personal blog
+# calcroft.com
+:pencil2: :blue_book: My blog and homepage
 
 ## Install
 1. `yarn`
