@@ -1,7 +1,15 @@
 const fs = require('fs-extra');
 const path = require('path');
 const handlebars = require('handlebars');
-const posts = require('./src/posts');
+const { createClient } = require('contentful');
+const showdown = require('showdown');
+
+const converter = new showdown.Converter();
+
+const client = createClient({
+  accessToken: process.env.CONTENTFUL_TOKEN,
+  space: process.env.CONTENTFUL_SPACE,
+});
 
 const DIST = path.resolve(__dirname, 'dist');
 const SRC = path.resolve(__dirname, 'src');
@@ -13,7 +21,7 @@ const getReadingTime = (content) => {
   return `${Math.ceil(strippedContent.split(' ').length / 250)} minute read`;
 };
 
-const getDateString = date => new Date(date * 1000).toLocaleDateString('en-GB');
+const getDateString = date => new Date(date).toLocaleDateString('en-GB');
 
 const getFileName = title => title.toLowerCase()
   .replace(/ /g, '-')
@@ -23,6 +31,11 @@ handlebars.registerHelper('getFileName', getFileName);
 handlebars.registerHelper('getDateString', getDateString);
 
 (async () => {
+  const { items: posts } = await client.getEntries({
+    content_type: 'blogPost',
+    order: '-fields.date',
+  });
+
   await fs.emptyDir(DIST);
   handlebars.registerPartial('container', await fs.readFile('src/container.handlebars', 'utf8'));
 
@@ -32,26 +45,26 @@ handlebars.registerHelper('getDateString', getDateString);
   await fs.copy(`${SRC}/blog.calcroft.com.js`, `${DIST}/blog.calcroft.com.js`);
 
   const postTemplate = handlebars.compile(await fs.readFile('src/post.handlebars', 'utf8'));
-  posts.sort((a, b) => b.created - a.created).forEach(async ({
-    title,
-    body,
-    created,
+  posts.forEach(async ({
+    fields: {
+      title,
+      body,
+      date,
+    },
   }) => {
     const filename = getFileName(title);
     const html = postTemplate({
-      post: body,
+      post: converter.makeHtml(body),
       title,
-      created,
+      date,
       readingTime: getReadingTime(body),
-      fileName: filename,
-      filename: './',
     });
     await fs.writeFile(`${DIST}/${filename}.html`, html);
   });
 
   const indexTemplate = handlebars.compile(await fs.readFile('src/index.handlebars', 'utf8'));
   await fs.writeFile(`${DIST}/index.html`, indexTemplate({
-    posts,
+    posts: posts.map(post => post.fields),
     title: 'Rob\'s Blog',
   }));
 })();
