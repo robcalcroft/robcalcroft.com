@@ -21,7 +21,10 @@ const getReadingTime = (content) => {
   return `${Math.ceil(strippedContent.split(' ').length / 250)} minute read`;
 };
 
-const getDateString = date => new Date(date).toLocaleDateString('en-GB');
+const getDateString = (dateString) => {
+  const [year, month, date] = dateString.split('-');
+  return `${date}/${month}/${year}`;
+};
 
 const getFileName = title => title.toLowerCase()
   .replace(/ /g, '-')
