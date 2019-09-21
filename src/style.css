@@ -11,6 +11,9 @@
   --author-background-color: lavender;
   --author-info-color: #00008b;
   --dark-mode-toggle-color: #00008b;
+  --blockquote-color: slategrey;
+  --footer-color: slategrey;
+  --subtitle-color: slategrey;
 }
 
 .dark {
@@ -26,6 +29,9 @@
   --author-background-color: #272451;
   --author-info-color: #f4f4f4;
   --dark-mode-toggle-color: white;
+  --blockquote-color: #b9c1ce;
+  --footer-color: #b9c1ce;
+  --subtitle-color: #b9c1ce;
 }
 
 * {
@@ -106,12 +112,12 @@ img {
 }
 
 footer {
-  color: slategrey;
+  color: var(--footer-color);
   padding-bottom: 1rem;
 }
 
 blockquote {
-  border-left: 0.5rem solid slategrey;
+  border-left: 0.5rem solid var(--blockquote-color);
   margin: 0;
   padding-left: 2rem;
 }
@@ -126,7 +132,7 @@ ul.posts li {
 }
 
 .subtitle {
-  color: slategrey;
+  color: var(--subtitle-color);
   font-size: 1.5rem;
   margin-top: 1rem;
 }
