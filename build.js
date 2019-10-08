@@ -52,16 +52,19 @@ handlebars.registerHelper('getDateString', getDateString);
   posts.forEach(async ({
     fields: {
       title,
+      description = "Rob's personal blog where he discusses the web, the challenges it faces and how to tackle them",
       body,
       date,
     },
   }) => {
     const filename = getFileName(title);
+    const htmlBody = converter.makeHtml(body);
     const html = postTemplate({
-      post: converter.makeHtml(body),
+      post: htmlBody,
       title,
+      description,
       date,
-      readingTime: getReadingTime(body),
+      readingTime: getReadingTime(htmlBody),
     });
     await fs.writeFile(`${DIST}/${filename}.html`, html);
   });
