@@ -1,4 +1,4 @@
-.light {
+body {
   --background-color: white;
   --text-color: black;
   --link-color: #00008b;
@@ -14,32 +14,7 @@
   --blockquote-color: slategrey;
   --footer-color: slategrey;
   --subtitle-color: slategrey;
-}
 
-.dark {
-  --background-color: #191735;
-  --text-color: #f4f4f4;
-  --link-color: #f4f4f4;
-  --link-background-color: #af3d4e;
-  --link-shadow-color: lightpink;
-  --heading-1-color: #f4f4f4;
-  --heading-1-background-color: #af3d4e;
-  --heading-1-shadow-color: #dd4b61;
-  --code-background-color: #272451;
-  --author-background-color: #272451;
-  --author-info-color: #f4f4f4;
-  --dark-mode-toggle-color: white;
-  --blockquote-color: #b9c1ce;
-  --footer-color: #b9c1ce;
-  --subtitle-color: #b9c1ce;
-}
-
-* {
-  transition: color 50ms ease-in-out, background-color 50ms ease-in-out,
-    box-shadow 50ms ease-in-out;
-}
-
-body {
   background-color: var(--background-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -52,6 +27,26 @@ body {
   justify-content: space-between;
   line-height: 2.2rem;
   color: var(--text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --background-color: #191735;
+    --text-color: #f4f4f4;
+    --link-color: #f4f4f4;
+    --link-background-color: #af3d4e;
+    --link-shadow-color: #dd4b61;
+    --heading-1-color: #f4f4f4;
+    --heading-1-background-color: #af3d4e;
+    --heading-1-shadow-color: #dd4b61;
+    --code-background-color: #272451;
+    --author-background-color: #272451;
+    --author-info-color: #f4f4f4;
+    --dark-mode-toggle-color: white;
+    --blockquote-color: #b9c1ce;
+    --footer-color: #b9c1ce;
+    --subtitle-color: #b9c1ce;
+  }
 }
 
 a {
@@ -72,7 +67,6 @@ a:active {
 }
 
 h1 {
-  position: relative;
   font-size: 3rem;
   line-height: 100%;
   margin-top: 2rem;
@@ -80,30 +74,11 @@ h1 {
   color: var(--heading-1-color);
   background-color: var(--heading-1-background-color);
   padding: 0.6rem;
-  padding-right: 12.5rem;
   box-shadow: 8px 8px 0 var(--heading-1-shadow-color);
 }
 
 h1.h1__tall {
   margin-bottom: 2rem;
-}
-
-.theme-toggle {
-  position: absolute;
-  border: 0;
-  font-family: inherit;
-  font-size: 1.4rem;
-  background-color: transparent;
-  color: var(--dark-mode-toggle-color);
-  top: 16px;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  padding-right: 0.6rem;
-}
-
-.theme-toggle:hover {
-  text-decoration: underline;
 }
 
 img {
@@ -187,9 +162,5 @@ pre code {
 @media (max-width: 768px) {
   h1 {
     padding-right: 0.6rem;
-  }
-
-  .theme-toggle {
-    position: initial;
   }
 }
