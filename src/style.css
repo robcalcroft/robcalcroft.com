@@ -63,7 +63,7 @@ a:hover {
 
 a:focus,
 a:active {
-  transform: scale(1.05);
+  transform: scale(0.975);
 }
 
 h1 {
