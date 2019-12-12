@@ -21,7 +21,9 @@ body {
     sans-serif;
   font-size: 1.4rem;
   height: 100vh;
-  margin: 0 20%;
+  margin: 0 auto;
+  max-width: 625px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -141,9 +143,11 @@ pre code {
   color: var(--author-info-color);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
   body {
     margin: 0 3%;
+    width: initial;
+    max-width: unset;
   }
 
   .author {
@@ -157,9 +161,7 @@ pre code {
   .author__info {
     margin-left: 0;
   }
-}
 
-@media (max-width: 768px) {
   h1 {
     padding-right: 0.6rem;
   }
