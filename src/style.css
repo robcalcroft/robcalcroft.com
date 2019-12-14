@@ -57,13 +57,14 @@ a {
   padding: 0 0.1rem;
 }
 
-a:hover {
+a:hover,
+a:focus {
   box-shadow: 4px 4px 0px var(--link-shadow-color);
   background-color: var(--link-background-color);
   text-decoration: none;
+  outline: none;
 }
 
-a:focus,
 a:active {
   transform: scale(0.975);
 }
