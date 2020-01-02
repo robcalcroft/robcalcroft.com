@@ -44,7 +44,6 @@ handlebars.registerHelper('getDateString', getDateString);
 
   await fs.copy(`${SRC}/style.css`, `${DIST}/style.css`);
   await fs.copy(`${SRC}/_headers`, `${DIST}/_headers`);
-  await fs.copy(`${SRC}/author.jpg`, `${DIST}/author.jpg`);
   await fs.copy(`${SRC}/favicon.ico`, `${DIST}/favicon.ico`);
 
   const postTemplate = handlebars.compile(await fs.readFile('src/post.handlebars', 'utf8'));

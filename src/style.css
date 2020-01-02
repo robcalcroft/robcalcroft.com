@@ -132,14 +132,7 @@ pre code {
   margin-bottom: 1rem;
 }
 
-.author__image {
-  width: 85px;
-  border-radius: 4px;
-  align-self: center;
-}
-
 .author__info {
-  margin-left: 1rem;
   font-weight: bold;
   color: var(--author-info-color);
 }
@@ -153,10 +146,6 @@ pre code {
 
   .author {
     flex-direction: column;
-  }
-
-  .author__image {
-    align-self: flex-start;
   }
 
   .author__info {
