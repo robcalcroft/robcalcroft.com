@@ -2,7 +2,7 @@
   "name": "blog.calcroft.com",
   "version": "1.0.0",
   "repository": "git@github.com:robcalcroft/blog.calcroft.com.git",
-  "author": "Rob Calcroft <rob@calcroft.com>",
+  "author": "Rob Calcroft <robcalcroft@users.noreply.github.com>",
   "scripts": {
     "lint": "eslint .",
     "build": "node build.js",
