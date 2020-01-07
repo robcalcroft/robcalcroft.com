@@ -46,11 +46,13 @@ handlebars.registerHelper('getDateString', getDateString);
   await fs.copy(`${SRC}/_headers`, `${DIST}/_headers`);
   await fs.copy(`${SRC}/favicon.ico`, `${DIST}/favicon.ico`);
 
+  const defaultMetaDescription = "Rob's personal blog where he discusses the web, the challenges it faces and how to tackle them";
+
   const postTemplate = handlebars.compile(await fs.readFile('src/post.handlebars', 'utf8'));
   posts.forEach(async ({
     fields: {
       title,
-      description = "Rob's personal blog where he discusses the web, the challenges it faces and how to tackle them",
+      description = defaultMetaDescription,
       body,
       date,
     },
@@ -71,5 +73,6 @@ handlebars.registerHelper('getDateString', getDateString);
   await fs.writeFile(`${DIST}/index.html`, indexTemplate({
     posts: posts.map(post => post.fields),
     title: 'Rob\'s Blog',
+    description: defaultMetaDescription,
   }));
 })();
