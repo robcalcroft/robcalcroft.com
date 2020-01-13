@@ -69,6 +69,10 @@ a:active {
   transform: scale(0.975);
 }
 
+article {
+  width: 100%;
+}
+
 h1 {
   font-size: 3rem;
   line-height: 100%;
@@ -115,14 +119,14 @@ ul.posts li {
   margin-top: 1rem;
 }
 
-code {
-  font-size: 1.65rem;
-  background-color: var(--code-background-color);
-  padding: 0 0.5rem;
+pre {
+  overflow-x: scroll;
 }
 
-pre code {
-  font-size: 1.4rem;
+code {
+  font-size: 1.3rem;
+  background-color: var(--code-background-color);
+  padding: 0 0.5rem;
 }
 
 .author {

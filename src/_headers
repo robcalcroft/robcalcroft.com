@@ -2,5 +2,5 @@
   x-content-type-options: nosniff
   x-frame-options: SAMEORIGIN
   x-xss-protection: 1; mode=block
-  content-security-policy: default-src 'self' https:; img-src 'self' https: imgur.com; script-src 'self' https: gist.github.com
+  content-security-policy: default-src 'none'; img-src 'self' images.ctfassets.net; script-src 'self' https://gist.github.com; style-src 'self' https://gist.github.com  https://github.githubassets.com;
   referrer-policy: no-referrer-when-downgrade
