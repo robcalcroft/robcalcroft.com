@@ -143,13 +143,14 @@ code {
 
 @media (max-width: 800px) {
   body {
-    margin: 0 3%;
+    margin: 0 1rem;
     width: initial;
     max-width: unset;
   }
 
   .author {
     flex-direction: column;
+    padding: 1rem;
   }
 
   .author__info {
