@@ -34,21 +34,21 @@ handlebars.registerHelper('getFileName', getFileName);
 handlebars.registerHelper('getDateString', getDateString);
 
 (async () => {
-  console.log('🔨 Getting CMS data...');
+  console.log('🚧 Getting CMS data...');
   const { items: posts } = await client.getEntries({
     content_type: 'blogPost',
     order: '-fields.date',
   });
 
-  console.log('🔨 CMS data recieved', posts.length, 'posts');
+  console.log('🚧 CMS data recieved', posts.length, 'posts');
 
   await fs.emptyDir(DIST);
   handlebars.registerPartial('container', await fs.readFile('src/container.handlebars', 'utf8'));
 
-  const staticFilesToMove = ['style.css', '_headers', 'favicon.ico'];
+  const staticFilesToMove = ['style.css', '_headers', 'favicon.ico', 'robots.txt'];
 
   // Copy all static files to the `dist` folder
-  console.log('🔨 Copying', staticFilesToMove.length, 'static files to the build location...');
+  console.log('🚧 Copying', staticFilesToMove.length, 'static files to the build location...');
   await Promise.all(staticFilesToMove.map(file => fs.copy(`${SRC}/${file}`, `${DIST}/${file}`)));
 
   const defaultMetaDescription = "Rob's personal blog where he discusses the web, the challenges it faces and how to tackle them";
@@ -62,7 +62,7 @@ handlebars.registerHelper('getDateString', getDateString);
       date,
     },
   }) => {
-    console.log('🔨 Building post', `${title}...`);
+    console.log('🚧 Building post', `${title}...`);
     const filename = getFileName(title);
     const htmlBody = converter.makeHtml(body);
     const html = postTemplate({
@@ -73,10 +73,10 @@ handlebars.registerHelper('getDateString', getDateString);
       readingTime: getReadingTime(htmlBody),
     });
     await fs.writeFile(`${DIST}/${filename}.html`, html);
-    console.log('🔨 Post', title, 'built');
+    console.log('🚧 Post', title, 'built');
   }));
 
-  console.log('🔨 Building index.html');
+  console.log('🚧 Building index.html');
   const indexTemplate = handlebars.compile(await fs.readFile('src/index.handlebars', 'utf8'));
   await fs.writeFile(`${DIST}/index.html`, indexTemplate({
     posts: posts.map(post => post.fields),
