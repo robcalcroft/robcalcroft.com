@@ -26,7 +26,7 @@ const getDateString = (dateString) => {
   return `${date}/${month}/${year}`;
 };
 
-const getFileName = title => title.toLowerCase()
+const getFileName = (title) => title.toLowerCase()
   .replace(/ /g, '-')
   .replace(/(\*|,|'|:)/g, '');
 
@@ -49,7 +49,7 @@ handlebars.registerHelper('getDateString', getDateString);
 
   // Copy all static files to the `dist` folder
   console.log('🚧 Copying', staticFilesToMove.length, 'static files to the build location...');
-  await Promise.all(staticFilesToMove.map(file => fs.copy(`${SRC}/${file}`, `${DIST}/${file}`)));
+  await Promise.all(staticFilesToMove.map((file) => fs.copy(`${SRC}/${file}`, `${DIST}/${file}`)));
 
   const defaultMetaDescription = "Rob's personal blog where he discusses the web, the challenges it faces and how to tackle them";
 
@@ -79,7 +79,7 @@ handlebars.registerHelper('getDateString', getDateString);
   console.log('🚧 Building index.html');
   const indexTemplate = handlebars.compile(await fs.readFile('src/index.handlebars', 'utf8'));
   await fs.writeFile(`${DIST}/index.html`, indexTemplate({
-    posts: posts.map(post => post.fields),
+    posts: posts.map((post) => post.fields),
     title: 'Rob\'s Blog',
     description: defaultMetaDescription,
   }));
