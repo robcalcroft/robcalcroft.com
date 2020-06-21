@@ -13,7 +13,7 @@
 <body>
   {{> @partial-block}}
   <footer>
-    Rob Calcroft {{#if post}} • <a href="/">Read more posts</a> {{/if}}• <a href="https://calcroft.com">calcroft.com</a>
+    Rob Calcroft • <a href="/">{{#if post}}Read more posts{{else}}calcroft.com{{/if}}</a>
   </footer>
 </body>
 </html>
