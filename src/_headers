@@ -5,3 +5,4 @@
   content-security-policy: default-src 'none'; img-src 'self' images.ctfassets.net; script-src 'self' https://gist.github.com; style-src 'self' https://gist.github.com  https://github.githubassets.com;
   referrer-policy: no-referrer-when-downgrade
   feature-policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
+  cache-control: no-cache
